@@ -62,7 +62,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       keys.forEach((key) => {
-        if (key === "v3") caches.delete(key);
+        if (key !== "v3") caches.delete(key);
       });
     }),
   );
